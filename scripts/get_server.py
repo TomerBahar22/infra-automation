@@ -1,5 +1,4 @@
 import json
-nameoffile="server_info.json"
 #Name of the server
 name=input("enter server name :")
 
@@ -24,6 +23,8 @@ while not ram_usage.isdigit():
     ram_usage=input("the RAM usage you entered is incorrect , please enter a valid RAM usage use only integers :") 
 ram["usage"]=ram_usage
 
+nameoffile=(f"{name}.json")
+
 serverinfo={
     "name":name,
     "os":os,
@@ -31,3 +32,4 @@ serverinfo={
 }
 with open(nameoffile, 'w') as f:
     json.dump(serverinfo, f, indent=4)
+print(f"The server information as been saved to {name}")
