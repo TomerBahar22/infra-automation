@@ -24,5 +24,18 @@
             "size": 8
         },
         "memory": 30
+    },
+    {
+        "name": "server3",
+        "os": "bsd",
+        "cpu": {
+            "model": "AMD",
+            "cores": 5
+        },
+        "ram": {
+            "type": "8",
+            "size": 96
+        },
+        "memory": 2
     }
 ]
