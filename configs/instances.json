@@ -1,0 +1,15 @@
+[
+    {
+        "name": "server1",
+        "os": "linux",
+        "cpu": {
+            "model": "amd",
+            "cores": 2301
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "memory": 2
+    }
+]
