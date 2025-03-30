@@ -85,7 +85,7 @@ class Machine(BaseModel):
         "os": self.os,
         "cpu": self.cpu.to_dict(),
         "ram": self.ram.to_dict(),
-        "memory": self.memory.to_dict()
+        "memory": self.memory
     }
 
     @staticmethod
@@ -185,7 +185,7 @@ class Machine(BaseModel):
             "os": machine.os,
             "cpu": machine.cpu.to_dict(),
             "ram": machine.ram.to_dict(),
-            "memory": machine.memory.to_dict()
+            "memory": machine.memory
         }
 
         logger.info(f"Machine created: {machine_dict}")
