@@ -1,11 +1,6 @@
-import sys
 import os
-
-# Dynamically add the root directory to the Python path (assuming the script is in 'scripts' folder)
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 from src.machine import Machine
 import json
-
 config_path = "configs/instances.json"
 
 # Check if the file exists and is not empty
