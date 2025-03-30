@@ -1,31 +1,26 @@
-# import json
-# import machine
+import sys
+import os
 
-# #Name of the server
-# name=machine.get_name()
+# Dynamically add the root directory to the Python path (assuming the script is in 'scripts' folder)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+from src.machine import Machine
+import json
 
-# #type of server Operating system
+config_path = "configs/instances.json"
 
+# Check if the file exists and is not empty
+if os.path.exists(config_path) and os.path.getsize(config_path) > 0:
+    # If the file exists and has content, load it
+    with open(config_path, "r") as f:
+        server_list = json.load(f)
+else:
+    # If the file is empty or doesn't exist, initialize an empty list
+    server_list = []
 
-# #RAM Valuse size , type and usage    
+# get the server details from the class Machine and then append it to the list of instances
+new_server = Machine.get_machine_details()
+server_list.append(new_server)
 
-# #CPU info model , cores , usage
-
-
-# #the name of the file
-# nameoffile="instances.json"
-
-# #dictionary of the server info
-# serverinfo={
-#     "name":name,
-#     "os":os,
-#     "RAM":ram,
-#     "CPU":cpu
-
-# }
-# #import my dictionary to json file 
-# with open(nameoffile, 'w') as f:
-#     json.dump(serverinfo, f, indent=4)
-
-# #output to user that the process was sucssesful
-# print(f"The server information as been saved to {nameoffile}")
+# Write the updated server list back to the file
+with open(config_path, "w") as f:
+    json.dump(server_list, f, indent=4)  # Use json.dump to save the updated list
