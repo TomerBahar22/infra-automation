@@ -1,6 +1,7 @@
 import os
 from src.machine import Machine
 import json
+import subprocess
 config_path = "configs/instances.json"
 
 # Check if the file exists and is not empty
@@ -19,3 +20,10 @@ server_list.append(new_server)
 # Write the updated server list back to the file
 with open(config_path, "w") as f:
     json.dump(server_list, f, indent=4)  # Use json.dump to save the updated list
+
+bash_script = 'scripts/install_config_service.sh'
+
+try:
+    subprocess.run(['bash', bash_script], check=True)
+except subprocess.CalledProcessError as e:
+    print(f"Error executing the Bash script: {e}")

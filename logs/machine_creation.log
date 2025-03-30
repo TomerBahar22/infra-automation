@@ -1,0 +1,2 @@
+2025-03-30 18:04:06,035 - INFO - Machine created: {'name': 'server1', 'os': 'bsd', 'cpu': {'model': '2', 'cores': 2}, 'ram': {'type': '2', 'size': 2}, 'memory': 2}
+2025-03-30 18:11:03,500 - INFO - Machine created: {'name': 'server4', 'os': 'linux', 'cpu': {'model': 'intel', 'cores': 2}, 'ram': {'type': '2', 'size': 2}, 'memory': 2}

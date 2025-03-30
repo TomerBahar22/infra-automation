@@ -1,40 +1,14 @@
 [
     {
-        "name": "server1",
+        "name": "server4",
         "os": "linux",
         "cpu": {
-            "model": "amd",
-            "cores": 2301
+            "model": "intel",
+            "cores": 2
         },
         "ram": {
             "type": "2",
             "size": 2
-        },
-        "memory": 2
-    },
-    {
-        "name": "server2",
-        "os": "windows",
-        "cpu": {
-            "model": "AMD",
-            "cores": 4
-        },
-        "ram": {
-            "type": "DDR4",
-            "size": 8
-        },
-        "memory": 30
-    },
-    {
-        "name": "server3",
-        "os": "bsd",
-        "cpu": {
-            "model": "AMD",
-            "cores": 5
-        },
-        "ram": {
-            "type": "8",
-            "size": 96
         },
         "memory": 2
     }
