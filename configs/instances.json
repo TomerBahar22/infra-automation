@@ -11,5 +11,18 @@
             "size": 2
         },
         "memory": 2
+    },
+    {
+        "name": "server2",
+        "os": "windows",
+        "cpu": {
+            "model": "AMD",
+            "cores": 4
+        },
+        "ram": {
+            "type": "DDR4",
+            "size": 8
+        },
+        "memory": 30
     }
 ]
