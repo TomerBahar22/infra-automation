@@ -1,0 +1,1 @@
+2025-03-30 14:48:22,289 - INFO - Machine created: {'name': 'tomer', 'os': 'bsd', 'cpu': {'model': 'AMD', 'usage': 2.0, 'cores': 2}, 'ram': {'type': '2', 'size': 2, 'usage': 2.0}, 'memory': {'used': 2.0, 'free': 2.0, 'total': 2.0, 'usage': 22.0}}

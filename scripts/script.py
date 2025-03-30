@@ -1,9 +1,7 @@
 
-
-
-
 # Now you can import from the 'src' folder
 from src.machine import Machine
 
+r=Machine.get_cpu_details()
 
-ram=Machine.get_ram()
+print(r)
