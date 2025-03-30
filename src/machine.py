@@ -1,8 +1,14 @@
 import logging
+import os
 from pydantic import BaseModel, Field, field_validator, ValidationError
 
 # Set up logging
 log_file = 'logs/machine_creation.log'
+
+# Verify if machine_creation.log exist in 'logs' directory 
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
         logging.FileHandler(log_file),  # Write logs to file
         logging.StreamHandler()         # Also display logs to the console

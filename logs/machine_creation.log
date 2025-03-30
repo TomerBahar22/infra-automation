@@ -1,4 +1,0 @@
-2025-03-30 17:41:22,728 - INFO - Machine created: {'name': 'tomer', 'os': 'bsd', 'cpu': {'model': '2', 'cores': 2}, 'ram': {'type': '2', 'size': 2}, 'memory': 2}
-2025-03-30 17:46:33,630 - INFO - Machine created: {'name': 'server1', 'os': 'linux', 'cpu': {'model': 'amd', 'cores': 2301}, 'ram': {'type': '2', 'size': 2}, 'memory': 2}
-2025-03-30 17:49:21,624 - INFO - Machine created: {'name': 'server2', 'os': 'windows', 'cpu': {'model': 'AMD', 'cores': 4}, 'ram': {'type': 'DDR4', 'size': 8}, 'memory': 30}
-2025-03-30 17:52:04,630 - INFO - Machine created: {'name': 'server3', 'os': 'bsd', 'cpu': {'model': 'AMD', 'cores': 5}, 'ram': {'type': '8', 'size': 96}, 'memory': 2}
