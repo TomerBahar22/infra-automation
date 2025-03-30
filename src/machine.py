@@ -12,15 +12,7 @@ logger = logging.getLogger(__name__)
 #Sub-Class of CPU
 class CPUDetails(BaseModel):
     model: str = Field(..., description="The CPU model (e.g., Intel, AMD)")
-    usage: float = Field(..., ge=0, le=100, description="The CPU usage as a percentage (0-100%)")
     cores: int = Field(..., ge=1, description="The number of CPU cores (e.g., 4)")
-
-    #Validaet usage is a float or an int
-    @field_validator('usage')
-    def validate_cpu_usage(value):
-        if not isinstance(value, (int, float)):
-            raise ValueError("CPU usage must be a number (e.g., 25.5).")
-        return value
 
     #Validaet model is a string
     @field_validator('model')
@@ -44,14 +36,6 @@ class CPUDetails(BaseModel):
 class RAMDetails(BaseModel):
     type: str = Field(..., description="The RAM type (e.g DDR4)")
     size: int = Field(..., ge=1, description="The RAM size in GB (e.g 16GB)")
-    usage: float = Field(..., ge=0, le=100, description="The RAM usage as a percentage (0-100%)")
-
-    #Validaet usage is a float or int
-    @field_validator('usage')
-    def validate_ram_usage(value):
-        if not isinstance(value, (int, float)):
-            raise ValueError("RAM usage must be a number (e.g., 25.5).")
-        return value
 
     #Validaet type is a str
     @field_validator('type')
@@ -71,45 +55,6 @@ class RAMDetails(BaseModel):
     def to_dict(self):
         return self.model_dump()
 
-#Sub-Class of memory
-class MemoryDetails(BaseModel):
-    used: float = Field(..., ge=0, description="Memory used in GB (e.g 12GB)")
-    free: float = Field(..., ge=0, description="Memory free in GB (e.g 20GB)")
-    total: float = Field(..., ge=1, description="Total memory in GB (e.g 32GB)")
-    usage: float = Field(..., ge=0, le=100, description="Memory usage as a percentage (0-100%)")
-
-    #Validaet usage is a float or int
-    @field_validator('usage')
-    def validate_memory_usage(value):
-        if not isinstance(value, (float, int)):
-            raise ValueError("Memory usage must be a number (e.g., 25.5).")
-        return value
-
-    #Validaet free is a float or int
-    @field_validator('free')
-    def validate_memory_free(value):
-        if not isinstance(value, (float, int)):
-            raise ValueError("Memory free must be a number (e.g., 12GB).")
-        return value
-
-    #Validaet total is a float or int
-    @field_validator('total')
-    def validate_memory_total(value):
-        if not isinstance(value, (float, int)):
-            raise ValueError("Memory total must be a number (e.g., 32GB).")
-        return value
-
-    #Validaet used is a float or int
-    @field_validator('used')
-    def validate_memory_used(value):
-        if not isinstance(value, (float, int)):
-            raise ValueError("Memory used must be a number (e.g., 20GB).")
-        return value
-
-    #Convert Memory to a dictanory
-    def to_dict(self):
-        return self.model_dump()
-        
 
 #MainClass Machine
 class Machine(BaseModel):
@@ -117,13 +62,20 @@ class Machine(BaseModel):
     os: str = Field(..., pattern="^(windows|linux|unix|bsd)$", description="Operating System (windows, linux, unix, or bsd)")
     ram: RAMDetails = Field(..., description="RAM details")
     cpu: CPUDetails = Field(..., description="CPU details")
-    memory: MemoryDetails = Field(..., description="Memory details")
+    memory: int = Field(..., description="Memory details")
 
     #Validaet os is windows ,linux , unix , bsd
     @field_validator('os')
     def validate_os(value):
         if value.lower() not in {"windows", "linux", "unix", "bsd"}:
             raise ValueError("Operating System must be (windows, linux, unix, or bsd).")
+        return value
+
+    #Validaet total is a float or int
+    @field_validator('memory')
+    def validate_memory_total(value):
+        if not isinstance(value, (float, int)):
+            raise ValueError("Memory total must be a number (e.g., 32GB).")
         return value
 
     #return a dicanory of my class only work without iser input
@@ -209,56 +161,23 @@ class Machine(BaseModel):
             except ValueError:
                 print("Invalid input. Please enter a valid number for RAM usage.")
 
-        # Get and validate memory used
-        while True:
-            try:
-                used = float(input("Enter memory used in GB: "))
-                if used >= 0:
-                    break  # valid input, exit loop
-                else:
-                    print("Memory used must be a non-negative value.")
-            except ValueError:
-                print("Invalid input. Please enter a valid number for memory used.")
-
-        # Get and validate memory free
-        while True:
-            try:
-                free = float(input("Enter memory free in GB: "))
-                if free >= 0:
-                    break  # valid input, exit loop
-                else:
-                    print("Memory free must be a non-negative value.")
-            except ValueError:
-                print("Invalid input. Please enter a valid number for memory free.")
-
         # Get and validate memory total
         while True:
             try:
-                total = float(input("Enter total memory in GB: "))
-                if total > 0:
+                memory = float(input("Enter total memory in GB: "))
+                if memory > 0:
                     break  # valid input, exit loop
                 else:
                     print("Total memory must be a positive value.")
             except ValueError:
                 print("Invalid input. Please enter a valid number for total memory.")
 
-        # Get and validate memory usage
-        while True:
-            try:
-                memory_usage = float(input("Enter memory usage percentage (0-100): "))
-                if 0 <= memory_usage <= 100:
-                    break  # valid input, exit loop
-                else:
-                    print("Memory usage must be between 0 and 100.")
-            except ValueError:
-                print("Invalid input. Please enter a valid number for memory usage.")
 
         # Create and return the Machine instance
         cpu_details = CPUDetails(model=model, usage=usage, cores=cores)
         ram_details = RAMDetails(type=ram_type, size=ram_size, usage=ram_usage)
-        memory_details = MemoryDetails(used=used, free=free, total=total, usage=memory_usage)
 
-        machine = Machine(name=name, os=os, ram=ram_details, cpu=cpu_details, memory=memory_details)
+        machine = Machine(name=name, os=os, ram=ram_details, cpu=cpu_details, memory=memory)
 
         # Return a dictionary with each key separately
         machine_dict = {
