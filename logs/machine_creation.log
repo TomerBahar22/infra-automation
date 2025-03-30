@@ -1,2 +1,5 @@
 2025-03-30 18:04:06,035 - INFO - Machine created: {'name': 'server1', 'os': 'bsd', 'cpu': {'model': '2', 'cores': 2}, 'ram': {'type': '2', 'size': 2}, 'memory': 2}
 2025-03-30 18:11:03,500 - INFO - Machine created: {'name': 'server4', 'os': 'linux', 'cpu': {'model': 'intel', 'cores': 2}, 'ram': {'type': '2', 'size': 2}, 'memory': 2}
+2025-03-30 21:19:03,088 - INFO - Machine created: {'name': 'server1', 'os': 'linux', 'cpu': {'model': 'das', 'cores': 4}, 'ram': {'type': 'ddr4', 'size': 4}, 'disk': 'nvidia'}
+2025-03-30 21:20:04,161 - INFO - Machine created: {'name': 'server2', 'os': 'linux', 'cpu': {'model': '4', 'cores': 4}, 'ram': {'type': '4', 'size': 4}, 'disk': '4'}
+2025-03-30 21:20:18,529 - INFO - Machine created: {'name': 'server2', 'os': 'bsd', 'cpu': {'model': '6', 'cores': 6}, 'ram': {'type': '6', 'size': 6}, 'disk': '6'}

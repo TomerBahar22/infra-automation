@@ -11,5 +11,44 @@
             "size": 2
         },
         "memory": 2
+    },
+    {
+        "name": "server1",
+        "os": "linux",
+        "cpu": {
+            "model": "das",
+            "cores": 4
+        },
+        "ram": {
+            "type": "ddr4",
+            "size": 4
+        },
+        "disk": "nvidia"
+    },
+    {
+        "name": "server2",
+        "os": "linux",
+        "cpu": {
+            "model": "4",
+            "cores": 4
+        },
+        "ram": {
+            "type": "4",
+            "size": 4
+        },
+        "disk": "4"
+    },
+    {
+        "name": "server2",
+        "os": "bsd",
+        "cpu": {
+            "model": "6",
+            "cores": 6
+        },
+        "ram": {
+            "type": "6",
+            "size": 6
+        },
+        "disk": "6"
     }
 ]
