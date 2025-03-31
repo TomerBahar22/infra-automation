@@ -1,184 +1,41 @@
 [
     {
-        "name": "server4",
-        "os": "linux",
-        "cpu": {
-            "model": "intel",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "memory": 2
-    },
-    {
-        "name": "server1",
-        "os": "linux",
-        "cpu": {
-            "model": "das",
-            "cores": 4
-        },
-        "ram": {
-            "type": "ddr4",
-            "size": 4
-        },
-        "disk": "nvidia"
-    },
-    {
-        "name": "server2",
-        "os": "linux",
-        "cpu": {
-            "model": "4",
-            "cores": 4
-        },
-        "ram": {
-            "type": "4",
-            "size": 4
-        },
-        "disk": "4"
-    },
-    {
-        "name": "server2",
-        "os": "bsd",
-        "cpu": {
-            "model": "6",
-            "cores": 6
-        },
-        "ram": {
-            "type": "6",
-            "size": 6
-        },
-        "disk": "6"
-    },
-    {
-        "name": "choko",
-        "os": "linux",
-        "cpu": {
-            "model": "AMD",
-            "cores": 2
-        },
-        "ram": {
-            "type": "d",
-            "size": 2
-        },
-        "disk": "2"
-    },
-    {
-        "name": "koko",
-        "os": "bsd",
+        "name": "serverAlpha",
+        "os": "unix",
         "cpu": {
             "model": "AMD",
             "cores": 4
         },
         "ram": {
-            "type": "D",
-            "size": 2
+            "type": "DDR4",
+            "size": 5
+        },
+        "disk": "Intel"
+    },
+    {
+        "name": "serverBeta",
+        "os": "linux",
+        "cpu": {
+            "model": "AMD",
+            "cores": 4
+        },
+        "ram": {
+            "type": "44",
+            "size": 4
         },
         "disk": "intel"
     },
     {
-        "name": "ratata",
-        "os": "unix",
+        "name": "Gamma",
+        "os": "bsd",
         "cpu": {
             "model": "AMD",
             "cores": 2
         },
         "ram": {
             "type": "DDR4",
-            "size": 2
+            "size": 4
         },
-        "disk": "2"
-    },
-    {
-        "name": "tomer",
-        "os": "linux",
-        "cpu": {
-            "model": "AMD",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": ""
-    },
-    {
-        "name": "tomer",
-        "os": "unix",
-        "cpu": {
-            "model": "AMD",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": "2"
-    },
-    {
-        "name": "lolo",
-        "os": "windows",
-        "cpu": {
-            "model": "2",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": "2"
-    },
-    {
-        "name": "chokomoko",
-        "os": "linux",
-        "cpu": {
-            "model": "AMD",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": "2"
-    },
-    {
-        "name": "dasd",
-        "os": "bsd",
-        "cpu": {
-            "model": "2",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": "2"
-    },
-    {
-        "name": "kolo",
-        "os": "bsd",
-        "cpu": {
-            "model": "2",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": "2"
-    },
-    {
-        "name": "kalala",
-        "os": "linux",
-        "cpu": {
-            "model": "AMD",
-            "cores": 2
-        },
-        "ram": {
-            "type": "2",
-            "size": 2
-        },
-        "disk": "2"
+        "disk": "intel"
     }
 ]

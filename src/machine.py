@@ -47,8 +47,12 @@ class Machine(BaseModel):
         }
     
     @staticmethod
-    def get_machine_details():
-        name = input("Enter machine name: ")
+    def get_machine_details(): 
+        while True:
+            name = input("Enter machine name: ")
+            if name.strip():
+                break
+            print("Name cannot be empty.")
 
         while True:
             os = input("Enter operating system (windows, linux, unix, or bsd): ").lower()
@@ -86,7 +90,12 @@ class Machine(BaseModel):
             except ValueError:
                 print("Invalid input. Please enter a valid integer.")
 
-        disk = input("Enter Server disk: ")
+        while True:
+            disk = input("Enter Server disk: ")
+            if disk.strip():
+                break
+            print("Disk cannot be empty.")
+        
                 
 
         cpu_details = CPUDetails(model=model, cores=cores)
