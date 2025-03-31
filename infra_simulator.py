@@ -14,7 +14,7 @@ if not os.path.exists(log_file):
 # Set up logging for this script
 logging.basicConfig(
     filename=log_file, 
-    level=logging.DEBUG, 
+    level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
@@ -31,8 +31,10 @@ else:
 
 #save the amount of servers you made each run of the scripts 
 size=0 
+# save the amout of servers you have before running the script 
 list_len=len(server_list)
 
+#a loop to run for each server the user choose to add
 while True:
 
     size+=1
