@@ -50,5 +50,135 @@
             "size": 6
         },
         "disk": "6"
+    },
+    {
+        "name": "choko",
+        "os": "linux",
+        "cpu": {
+            "model": "AMD",
+            "cores": 2
+        },
+        "ram": {
+            "type": "d",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "koko",
+        "os": "bsd",
+        "cpu": {
+            "model": "AMD",
+            "cores": 4
+        },
+        "ram": {
+            "type": "D",
+            "size": 2
+        },
+        "disk": "intel"
+    },
+    {
+        "name": "ratata",
+        "os": "unix",
+        "cpu": {
+            "model": "AMD",
+            "cores": 2
+        },
+        "ram": {
+            "type": "DDR4",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "tomer",
+        "os": "linux",
+        "cpu": {
+            "model": "AMD",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": ""
+    },
+    {
+        "name": "tomer",
+        "os": "unix",
+        "cpu": {
+            "model": "AMD",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "lolo",
+        "os": "windows",
+        "cpu": {
+            "model": "2",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "chokomoko",
+        "os": "linux",
+        "cpu": {
+            "model": "AMD",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "dasd",
+        "os": "bsd",
+        "cpu": {
+            "model": "2",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "kolo",
+        "os": "bsd",
+        "cpu": {
+            "model": "2",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": "2"
+    },
+    {
+        "name": "kalala",
+        "os": "linux",
+        "cpu": {
+            "model": "AMD",
+            "cores": 2
+        },
+        "ram": {
+            "type": "2",
+            "size": 2
+        },
+        "disk": "2"
     }
 ]

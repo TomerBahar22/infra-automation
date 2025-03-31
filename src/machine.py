@@ -35,7 +35,7 @@ class Machine(BaseModel):
     os: str = Field(..., description="Operating System (windows, linux, unix, or bsd)")
     ram: RAMDetails
     cpu: CPUDetails
-    disk: str = Field(..., description="Server disk")
+    disk: str = Field(..., description="Disk details")
     
     def to_dict(self):
         return {

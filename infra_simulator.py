@@ -15,7 +15,7 @@ else:
 
 #save the amount of servers you made each run of the scripts 
 size=0 
-
+list_len=len(server_list)
 while True:
     
     size+=1
@@ -34,6 +34,7 @@ while True:
     
 #ask for each machine that you made if you want to install nginx
 for i in range(size):
+    print(f"Running installation script for machine {list_len+i}...")
     bash_script = 'scripts/install_config_service.sh' #Path to the Bash script
     try:
         subprocess.run(['bash', bash_script], check=True) # using subprocess to try and run the bash script 
