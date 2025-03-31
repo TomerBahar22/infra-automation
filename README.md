@@ -97,8 +97,5 @@ tail -f logs/provisioning.log
 - Automate infrastructure management using Terraform.
 - Expand service configurations with more automation capabilities.
 
----
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
