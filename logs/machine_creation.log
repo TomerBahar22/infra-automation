@@ -1,3 +1,0 @@
-2025-03-31 09:45:59,636 - INFO - Machine created: {'name': 'serverAlpha', 'os': 'unix', 'cpu': {'model': 'AMD', 'cores': 4}, 'ram': {'type': 'DDR4', 'size': 5}, 'disk': 'Intel'}
-2025-03-31 09:46:35,994 - INFO - Machine created: {'name': 'serverBeta', 'os': 'linux', 'cpu': {'model': 'AMD', 'cores': 4}, 'ram': {'type': '44', 'size': 4}, 'disk': 'intel'}
-2025-03-31 09:53:26,270 - INFO - Machine created: {'name': 'Gamma', 'os': 'bsd', 'cpu': {'model': 'AMD', 'cores': 2}, 'ram': {'type': 'DDR4', 'size': 4}, 'disk': 'intel'}

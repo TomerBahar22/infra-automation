@@ -2,16 +2,19 @@ import logging
 import os
 from pydantic import BaseModel, Field
 
-# Set up logging
-log_file = 'logs/machine_creation.log'
-if not os.path.exists('logs'):
-    os.makedirs('logs')
+log_file= 'logs/provisioning.log'
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', handlers=[
-    logging.FileHandler(log_file),
-    logging.StreamHandler()
-])
-logger = logging.getLogger(__name__)
+# Check if the log file exists, and if not, create it
+if not os.path.exists(log_file):
+    with open(log_file, 'w'):  # Create the log file if it does not exist
+        pass
+
+# Set up logging for this module
+logging.basicConfig(
+    filename=log_file, 
+    level=logging.DEBUG, 
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 # Sub-Class of CPU
 class CPUDetails(BaseModel):
@@ -47,7 +50,8 @@ class Machine(BaseModel):
         }
     
     @staticmethod
-    def get_machine_details(): 
+    def get_machine_details():
+ 
         while True:
             name = input("Enter machine name: ")
             if name.strip():
@@ -103,5 +107,5 @@ class Machine(BaseModel):
         machine = Machine(name=name, os=os, ram=ram_details, cpu=cpu_details, disk=disk)
         machine_dict = machine.to_dict()
 
-        logger.info(f"Machine created: {machine_dict}")
+        logging.info(f"Machine details: {machine_dict}")
         return machine_dict
