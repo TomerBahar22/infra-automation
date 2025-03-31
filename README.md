@@ -1,84 +1,104 @@
-Infra Automation
-Overview
-infra-automation is a Python-based project for automating the provisioning of server infrastructure. It allows users to create machine configurations interactively, stores them in a JSON file, and runs installation scripts for services like Nginx on the created machines.
+# DevOps Infrastructure Provisioning & Configuration Automation Project
 
-The project is structured with Python classes for defining machine details, logging the process, and running bash scripts for installing and configuring services.
+## Overview
 
-Features
-Server Configuration: Allows users to define machine specifications (name, OS, CPU, RAM, disk).
+This project is a modular Python-based infrastructure provisioning and configuration automation tool. Initially, it simulates infrastructure provisioning, but future enhancements will integrate AWS and Terraform to create real resources. The goal is to provide a solid foundation for automating infrastructure deployment and service configuration.
 
-Logging: Logs all actions, including machine creation and script execution.
+## Features
 
-JSON Configuration: Stores the created machine details in a instances.json file.
+- Accepts user inputs for defining virtual machines (VMs).
+- Validates input using Python.
+- Uses an object-oriented, modular code structure.
+- Automates service installation using Bash scripts.
+- Implements logging and error handling for reliability.
 
-Automation Scripts: Runs installation scripts (like Nginx installation) on the provisioned machines.
+---
 
-Requirements
-Python 3.x or higher
+## Project Structure
 
-Bash (for running scripts)
+```
+infra-automation/
+|-- scripts/       # Bash scripts for automation
+|-- configs/       # Configuration files (e.g., instances.json)
+|-- logs/          # Log files for tracking execution
+|-- src/           # Python source code for infrastructure automation
+|-- README.md      # Project documentation
+```
 
-pydantic (for data validation)
+---
 
-subprocess (for running shell commands)
+## Setup & Installation
 
-Installation
-Clone the repository:
-
-bash
-Copy
-Edit
+### 1. Clone the repository:
+```bash
 git clone https://github.com/TomerBahar22/infra-automation.git
 cd infra-automation
-Install required Python dependencies:
+```
 
-bash
-Copy
-Edit
-pip install pydantic
-Ensure that scripts/install_config_service.sh is available and executable:
+### 2. Set up a virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
 
-bash
-Copy
-Edit
-chmod +x scripts/install_config_service.sh
-Configuration
-Log File: All logs are saved to logs/provisioning.log.
+### 3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-Instances File: Machine configurations are stored in configs/instances.json.
+---
 
-If instances.json doesn't exist, it will be created automatically when the script runs.
+## Usage
 
-Usage
-Run the provisioning script to start creating machines:
+### Running the Infrastructure Provisioning Tool
 
-bash
-Copy
-Edit
-python provision.py
-Follow the interactive prompts to input machine details:
+Run the main script to start the provisioning process:
+```bash
+python src/infra_simulator.py
+```
 
-Machine Name
+The script will prompt the user to define virtual machines dynamically. Configurations will be validated and stored in `configs/instances.json`.
 
-Operating System (choose from: windows, linux, unix, bsd)
+### Example Execution
+```bash
+Enter VM Name: VM1
+Enter OS (Ubuntu/CentOS): Ubuntu
+Enter CPU Cores: 4
+Enter RAM (GB): 8
+Enter Disk: 8
 
-CPU Model and Cores
+Provisioning virtual machine: VM1
+Validating inputs...
+Machine VM1 created successfully!
+Starting service installation...
+Service installation completed successfully.
+```
 
-RAM Type and Size
+---
 
-Disk Details
+## Logging & Error Handling
 
-Once the machines are defined, you will be asked if you'd like to install a service (e.g., Nginx) on each of the machines.
+Logs are stored in `logs/provisioning.log` and include:
+- Provisioning start and end timestamps.
+- Any errors encountered.
+- Success messages for completed actions.
 
-If you confirm, the installation script (scripts/install_config_service.sh) will be executed on the provisioned machines.
+### Checking Logs
+To view logs, use:
+```bash
+tail -f logs/provisioning.log
+```
 
-Example
-When running the provision.py script, the program will:
+---
 
-Ask for machine details.
+## Future Enhancements
 
-Log the details into logs/provisioning.log.
+- Integrate AWS to provision real cloud instances.
+- Automate infrastructure management using Terraform.
+- Expand service configurations with more automation capabilities.
 
-Save the list of provisioned machines to configs/instances.json.
+---
 
-If you choose to install a service, the corresponding bash script will be executed to install the service on the machines.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
